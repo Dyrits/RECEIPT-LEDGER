@@ -1,0 +1,8 @@
+id,date,amount,label,source
+"TX-01","2026-10-03","1200.00","Atelier INV-001","bank-oct.csv row 2"
+"TX-02","2026-10-10","300.00","Studio INV-002 instalment","bank-oct.csv row 3"
+"TX-03","2026-10-12","600.00","Payment INV-003 INV-004","bank-oct.csv row 4"
+"TX-04","2026-10-14","500.00","Own account transfer","bank-oct.csv row 5"
+"TX-05","2026-10-18","116.00","Platform INV-005 net settlement","bank-oct.csv row 6"
+"TX-06","2026-10-22","-120.00","Customer refund prior period","bank-oct.csv row 7"
+"TX-07","2026-10-23","85.00","Unknown customer payment","bank-oct.csv row 8"

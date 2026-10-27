@@ -1,0 +1,109 @@
+{
+  "invoices": [
+    {
+      "id": "INV-001",
+      "client": "Atelier Demo",
+      "issued": "2026-09-25",
+      "gross": "1200.00",
+      "net": "1000.00",
+      "category": "BNC",
+      "source": "invoice-001.pdf p1"
+    },
+    {
+      "id": "INV-002",
+      "client": "Studio Demo",
+      "issued": "2026-10-02",
+      "gross": "600.00",
+      "net": "500.00",
+      "category": "BNC",
+      "source": "invoice-002.pdf p1"
+    },
+    {
+      "id": "INV-003",
+      "client": "Client Demo",
+      "issued": "2026-10-04",
+      "gross": "240.00",
+      "net": "200.00",
+      "category": "BNC",
+      "source": "invoice-003.pdf p1"
+    },
+    {
+      "id": "INV-004",
+      "client": "Client Demo",
+      "issued": "2026-10-05",
+      "gross": "360.00",
+      "net": "300.00",
+      "category": "BNC",
+      "source": "invoice-004.pdf p1"
+    },
+    {
+      "id": "INV-005",
+      "client": "Platform Demo",
+      "issued": "2026-10-08",
+      "gross": "120.00",
+      "net": "100.00",
+      "category": "BNC",
+      "source": "invoice-005.pdf p1"
+    },
+    {
+      "id": "INV-006",
+      "client": "Unpaid Demo",
+      "issued": "2026-10-20",
+      "gross": "480.00",
+      "net": "400.00",
+      "category": "BNC",
+      "source": "invoice-006.pdf p1"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "TX-01",
+      "date": "2026-10-03",
+      "amount": "1200.00",
+      "label": "Atelier INV-001",
+      "source": "bank-oct.csv row 2"
+    },
+    {
+      "id": "TX-02",
+      "date": "2026-10-10",
+      "amount": "300.00",
+      "label": "Studio INV-002 instalment",
+      "source": "bank-oct.csv row 3"
+    },
+    {
+      "id": "TX-03",
+      "date": "2026-10-12",
+      "amount": "600.00",
+      "label": "Payment INV-003 INV-004",
+      "source": "bank-oct.csv row 4"
+    },
+    {
+      "id": "TX-04",
+      "date": "2026-10-14",
+      "amount": "500.00",
+      "label": "Own account transfer",
+      "source": "bank-oct.csv row 5"
+    },
+    {
+      "id": "TX-05",
+      "date": "2026-10-18",
+      "amount": "116.00",
+      "label": "Platform INV-005 net settlement",
+      "source": "bank-oct.csv row 6"
+    },
+    {
+      "id": "TX-06",
+      "date": "2026-10-22",
+      "amount": "-120.00",
+      "label": "Customer refund prior period",
+      "source": "bank-oct.csv row 7"
+    },
+    {
+      "id": "TX-07",
+      "date": "2026-10-23",
+      "amount": "85.00",
+      "label": "Unknown customer payment",
+      "source": "bank-oct.csv row 8"
+    }
+  ]
+}

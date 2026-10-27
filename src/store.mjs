@@ -1,0 +1,10 @@
+const DB='receipt-ledger-v1';
+export const empty=()=>({version:1,invoices:[],transactions:[],documents:[],audit:[],settings:{},checks:{}});
+export async function db(){return new Promise((resolve,reject)=>{const q=indexedDB.open(DB,1);q.onupgradeneeded=()=>q.result.createObjectStore('workspace');q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error);});}
+export async function read(){const d=await db();try{return await new Promise((resolve,reject)=>{const tx=d.transaction('workspace');const q=tx.objectStore('workspace').get('main');q.onsuccess=()=>resolve(q.result||empty());q.onerror=()=>reject(q.error);});}finally{d.close();}}
+export async function write(data){const d=await db();try{await new Promise((resolve,reject)=>{const tx=d.transaction('workspace','readwrite');tx.objectStore('workspace').put(data,'main');tx.oncomplete=()=>resolve();tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||Error('Save aborted'));});}finally{d.close();}}
+export function record(state,type,detail){return {...state,audit:[...state.audit,{at:new Date().toISOString(),type,detail}].slice(-10000),checks:{}};}
+export async function hash(blob){return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',await blob.arrayBuffer())),b=>b.toString(16).padStart(2,'0')).join('');}
+export function save(name,content,mime='application/json'){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([content],{type:mime}));a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),10000);}
+export function periodDates(period){if(/^\d{4}-Q[1-4]$/.test(period)){const [year,q]=period.split('-Q'),m=(Number(q)-1)*3;return [year+'-'+String(m+1).padStart(2,'0')+'-01',new Date(Date.UTC(Number(year),m+3,1)).toISOString().slice(0,10)];}return [period+'-01',new Date(Date.UTC(Number(period.slice(0,4)),Number(period.slice(5,7)),1)).toISOString().slice(0,10)];}
+export function inPeriod(date,period){const [a,b]=periodDates(period);return date>=a&&date<b;}

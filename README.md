@@ -1,5 +1,9 @@
 # Receipt Ledger
 
+Open source under AGPL-3.0. Created and maintained by Dyrits.
+
+> **What this is, and is not.** Receipt Ledger is a local, rule-based reconciliation tool: PDF text extraction, on-device OCR and deterministic payment matching. It does **not** use generative AI or any model API. It is **not** an official filing service, it does not connect to URSSAF or any bank, and it is **not** tax or accounting advice. You review and decide everything.
+
 A browser-first, local-first invoice and payment reconciliation workspace. No Python, bank login, API key or backend is needed to use the deployed app. It prepares review reports. It does not file declarations, make payments or certify tax treatment.
 
 ## Use
@@ -39,7 +43,7 @@ Node 22+ recommended. `npm ci`, `npm run dev`, `npm run build`, `npm test`. The 
 
 ## Deploy
 
-Upload only `dist/` to a root static host. `_headers` is interpreted by compatible hosts such as Cloudflare Pages / Netlify; verify response headers on the selected host. Do not put source backups, real documents or test-downloads into the public deployment. Source package excludes node_modules, private test data, logs, tool output and credentials. Source remains editable and can live in a private repository owned by the user.
+Upload only `dist/` to a root static host. `_headers` is interpreted by compatible hosts such as Cloudflare Pages / Netlify; verify response headers on the selected host. Do not put source backups, real documents or test-downloads into the public deployment. Source package excludes node_modules, private test data, logs, tool output and credentials.
 
 ## Tests
 
@@ -51,4 +55,12 @@ Security dependency audit at build time: `npm audit --omit=dev` returns zero kno
 
 ## Licensing
 
-No public redistribution license has been selected for the application code. Dependencies keep their own licenses. See licenses/ and THIRD_PARTY.md. Fonts are open-source DM Sans and Libre Baskerville under the SIL Open Font License. No proprietary font asset is bundled.
+Receipt Ledger is free software under the GNU Affero General Public License, version 3 only (AGPL-3.0-only). See LICENSE. Copyright (C) 2026 Dyrits.
+
+In short: you may use, study, modify and redistribute it, including commercially. If you distribute it, or let users interact with a modified version over a network, you must make the corresponding source of your version available to them under the same license (AGPL section 13). The software is provided without warranty of any kind; see LICENSE sections 15 and 16.
+
+Third-party components keep their own licenses. See licenses/ and THIRD_PARTY.md. Fonts are open-source DM Sans and Libre Baskerville under the SIL Open Font License.
+
+## Contributing and safety
+
+Issues and pull requests are welcome; contributions are accepted under the same AGPL-3.0-only license. Never commit or attach real invoices, bank statements, backups or exports to this repository, issues or pull requests. Use only synthetic data like the files in `fixtures/`.
