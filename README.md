@@ -1,5 +1,22 @@
 # Receipt Ledger
 
+Local-first invoice and payment reconciliation for French micro-entrepreneurs. Browser-only PDF/OCR, payment matching and reviewed turnover reports. No backend, no filing.
+
+## Table of contents
+
+- [About The Project](#about-the-project)
+- [Use](#use)
+- [Extraction and import limits](#extraction-and-import-limits)
+- [Privacy and security](#privacy-and-security)
+- [Develop](#develop)
+- [Deploy](#deploy)
+- [Tests](#tests)
+- [Licensing](#licensing)
+- [Contributing and safety](#contributing-and-safety)
+- [Contact](#contact)
+
+## About The Project
+
 Open source under AGPL-3.0. Created and maintained by Dyrits.
 
 > **What this is, and is not.** Receipt Ledger is a local, rule-based reconciliation tool: PDF text extraction, on-device OCR and deterministic payment matching. It does **not** use generative AI or any model API. It is **not** an official filing service, it does not connect to URSSAF or any bank, and it is **not** tax or accounting advice. You review and decide everything.
@@ -64,3 +81,7 @@ Third-party components keep their own licenses. See licenses/ and THIRD_PARTY.md
 ## Contributing and safety
 
 Issues and pull requests are welcome; contributions are accepted under the same AGPL-3.0-only license. Never commit or attach real invoices, bank statements, backups or exports to this repository, issues or pull requests. Use only synthetic data like the files in `fixtures/`.
+
+## Contact
+
+Dyrits - https://github.com/Dyrits
